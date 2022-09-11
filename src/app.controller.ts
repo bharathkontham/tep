@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
+import { Task } from './interfaces/task.interface';
 
 @Controller()
 export class AppController {
@@ -23,14 +24,36 @@ export class AppController {
     schema: {
       type: 'object',
       properties: {
-        title: {
+        name: {
           type: 'string',
         },
+        webHookURL: {
+          type: 'string',
+        },
+        payload: {
+          type: 'object',
+          properties: {},
+          additionalProperties: true,
+        },
+        schedule: {
+          type: 'object',
+          properties: {
+            repeatable: {
+              type: 'boolean',
+            },
+            delay: {
+              type: 'number',
+            },
+            cron: {
+              type: 'string',
+            },
+          },
+        },
       },
-      additionalProperties: true,
+      additionalProperties: false,
     },
   })
-  async addTaskToQueue(@Body() content: any): Promise<any> {
-    return this.appService.addToQueue(content);
+  async addTaskToQueue(@Body() taskContent: Task): Promise<any> {
+    return this.appService.addToQueue(taskContent);
   }
 }

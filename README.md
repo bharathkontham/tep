@@ -8,6 +8,7 @@
 
 * Used BullMQ as a messaging queue for processing tasks.
 * NestJS framework is used for developing this service.
+* Redis is required for bullmq
 
 ## configuration
 
