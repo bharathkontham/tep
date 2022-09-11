@@ -1,2 +1,29 @@
-# tep
-Task Executor Process
+# Task Executor Service
+
+## Dependencies
+
+* Redis
+
+## Description
+
+* Used BullMQ as a messaging queue for processing email.
+* nodemailer is used to send SMTP emails.
+* NestJS framework is used for developing this service.
+
+## configuration
+
+* create .env file based on .env.sample sample file in root directory
+
+## Flow and Architecture
+
+* TBD
+
+## APIs
+
+* Swagger url <http://localhost:3000/docs>
+
+## How to run
+
+```shell
+npm start
+```
