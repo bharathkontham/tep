@@ -6,8 +6,7 @@
 
 ## Description
 
-* Used BullMQ as a messaging queue for processing email.
-* nodemailer is used to send SMTP emails.
+* Used BullMQ as a messaging queue for processing tasks.
 * NestJS framework is used for developing this service.
 
 ## configuration
